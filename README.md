@@ -38,7 +38,7 @@ Both types of mux are easily implemented in SystemVerilog, but you should take c
 
 ~~~verilog
 // OK if only two inputs  
-assign out = sel0 ? in0 :in1;
+assign out = sel0 ? in0 : in1;
 ~~~
  On the other hand, a simple priority mux three or more inputs might be formatted in any number of logically correct ways, but one of them is the clear winner:
 
