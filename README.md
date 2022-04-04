@@ -80,7 +80,7 @@ assign out[15:0] = ( sel0                  ? in0[15:0] : '0 )
 Do you see the problem? It’s impossible to know whether this is an actual bug without more context, but it is likely that we should have an input to select in the case of `sel1 & ~qual1 & ~qual2`. What if we actually wanted to output zeros in that case? The code works, but it certainly isn't clear! This would be much better:
 
 ~~~verilog
-// AOMUX 2c, GOOD: there is a good chance this code is broken  
+// AOMUX 2c, GOOD: this code is more explicit and less likely to be broken  
 assign in3[15:0] = '0;  
 assign out[15:0] = ( sel0                   ? in0[15:0] : '0 )  
                  | ( sel1 &  qual1          ? in1[15:0] : '0 )  
